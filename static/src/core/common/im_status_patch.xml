@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="gpi_mail_im_status.ImStatusPatch" t-inherit="mail.ImStatus" t-inherit-mode="extension">
+        <xpath expr='//i[@t-elif="props.persona.im_status === &apos;away&apos;"]' position="after">
+            <i t-elif="props.persona.im_status === 'busy'" class="fa fa-minus-circle text-danger" title="Busy" role="img" aria-label="User is busy"/>
+        </xpath>
+    </t>
+
+</templates>
