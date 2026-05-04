@@ -2,6 +2,12 @@
 <templates xml:space="preserve">
 
     <t t-name="gpi_mail_im_status.UserMenuPatch" t-inherit="web.UserMenu" t-inherit-mode="extension">
+        <xpath expr="//img[hasclass('o_user_avatar')]" position="replace">
+            <div class="position-relative d-flex flex-shrink-0 bg-inherit">
+                <t>$0</t>
+                <ImStatus t-if="store and store.self" className="'position-absolute'" style="'bottom: -2px; right: -2px;'" persona="store.self"/>
+            </div>
+        </xpath>
         <xpath expr='//DropdownItem[@t-if="element.type == &apos;item&apos; || element.type == &apos;switch&apos;"]' position="before">
             <t t-if="element.type == 'component'" t-component="element.contentComponent"/>
         </xpath>
