@@ -20,4 +20,4 @@ class ResUsers(models.Model):
         }
         for user in self:
             presence_status = presence_by_user.get(user, "offline")
-            user.im_status = user.manual_im_status or presence_status or "offline"
+            user.im_status = "busy" if user.manual_im_status == "busy" else (presence_status or "offline")

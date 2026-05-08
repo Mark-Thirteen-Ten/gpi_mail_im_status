@@ -10,7 +10,7 @@ class ImStatusController(http.Controller):
         if status not in ["online", "away", "busy", "offline"]:
             raise ValueError(_("Unexpected IM status %(status)s", status=status))
         user = request.env.user
-        user.manual_im_status = False if status == "online" else status
+        user.manual_im_status = "busy" if status == "busy" else False
         presence = request.env["bus.presence"].sudo().search([("user_id", "=", user.id)], limit=1)
         request.env["bus.bus"]._sendone(
             (user.partner_id, "presence"),
