@@ -6,7 +6,7 @@
     "author": "GPI",
     "website": "https://github.com/mark-thirteen-ten",
     "category": "Discuss",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "depends": ["bus", "mail", "web"],
     "data": [],
     "assets": {
